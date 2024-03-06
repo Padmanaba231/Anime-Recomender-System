@@ -19,3 +19,33 @@ Pada proyek ini akan dibuat sistem rekomendasi untuk merekomendasikan anime yang
 + Mengetahui performa dari model yang telah dipilih
 
 ## Solution Approach
++ Menerapkan beberapa metode dalam melakukan pemrosesan data seperti menghapus missing value , membagi dataset menjadi data latih dan data pengujian, serta melakukan reduksi terhadap fitur yang tidak terlalu berguna
++ Menggunakan dua metode pendekatan dalam sistem rekomendasi. Pendekatan pertama menggunakan metode _Content Based Filtering_ menggunakan model _Cosine Similarity_. Pendekatan kedua menggunakan metode _Collaborative Filtering_ menggunakan metode _Deep Learning_
+
+
+# Data Understanding
+Pada proyek ini menggunakan 2 _dataset_, yaitu dataset anime.csv dan rating.csv yang dapat diunduh di: [anime recomendation database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database)
+Informasi dataset:
++ anime.csv
+  + Memiliki 7 fitur dengan 12294 sample
+  + Memiliki 3 fitur numerik dan memiliki 4 fitur obyek
+  + Terdapat _missing value_ pada data
++ rating.csv
+  + Memiliki 3 fitur
+  + Semua fitur bertipe numerik
+  + Terdapat _missing value_ berupa nilai -1 pada fitur rating
+
+## Variable pada _dataset_
+__anime.csv__:
++ anime_id - id unik myanimelist.net yang mengidentifikasi sebuah anime.
++ name - nama lengkap anime.
++ genre - daftar genre yang dipisahkan koma untuk anime ini.
++ type - jenis anime apakah film, TV, OVA, dll.
++ episode - berapa banyak episode dalam acara ini. (1 jika film).
++ rating - rating rata-rata dari 10 untuk anime ini.
++ member - jumlah anggota komunitas yang ada di anime ini
+<br>
+__rating.csv__:
++ anime_id - id unik myanimelist.net yang mengidentifikasi sebuah anime.
++ user_id - id pengguna yang dihasilkan secara acak dan tidak dapat diidentifikasi.
++ rating - rating dari 10 yang ditetapkan pengguna ini (-1 jika pengguna menontonnya tetapi tidak memberikan peringkat).
