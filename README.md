@@ -80,4 +80,18 @@ Seperti yang sudah dijelaskan sebelumnya pada bagian data understanding, _datase
 Pada _dataset_ anime.csv terdapat beberapa fitur yang kurang relevant atau kurang berguna. Oleh karena itu, fitur-fitur tersebut akan dieliminasi. Fitur episodes dieliminasi karena kurang penting dalam keputusan pengguna dalam menentukan pilihan anime yang akan ditonton. Fitur anime_id dan members dieliminasi karena tidak diperlukan saat proses pembentukan model _content based filtering_. 
 #### Encode user_id dan anime_id 
 Pada tahap ini dilakukan encode untuk menyandikan user_id dan anime_id ke dalam indeks integer. Tahapan ini diperlukan karena kedua data tersebut berisi integer yang tidak berurutan (acak). Untuk itu perlu diubah ke dalam bentuk indeks.
+#### Membagi data menjadi data latih dan data validasi
+Data dibagi menjadi 2, yaitu data yang akan digunakan untuk melatih model (sebesar 80%) dan data untuk memvalidasi model (sebesar 20%). Tujuan dari membagi data ini adalah untuk proses pelatihan model serta mengukur kinerja model.
 
+# Modeling and Result
+## Content Based Filtering
+Pada bagian _Content Based Filtering_ model yang digunakan pada proyek ini adalah metode Cosine Similarity. Cosine similarity akan mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama. Cosine Similarity akan menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity. Rumus dari Cosine Similarity adalah sebagai berikut:
+<br>
+$$Cosine Similarity (A, B) = (A · B) / (||A|| * ||B||)$$ 
+<br>
+Keterangan:
++ (A·B)menyatakan produk titik dari vektor A dan B.
++ ||A|| mewakili norma Euclidean (magnitudo) dari vektor A.
++ ||B|| mewakili norma Euclidean (magnitudo) dari vektor B.
+
+Setelah membangun model, model perlu diuji terlebih dahulu. Pada proyek ini dibuat model _Content Based Filtering_ menggunakan 2 filter, yaitu genre dan type. 
