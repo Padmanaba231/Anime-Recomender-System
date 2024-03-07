@@ -143,5 +143,38 @@ Karena hanya menggunakan arah vektor dan tidak menghitung besaran vektornya. Hal
 
 
 ## Collaborative Filtering
-Pada _Collaborative Filtering_ akan dilakukan pendekatan dengan _deep learning_.  Model yang akan dipakai dalam _Collaborative Filtering_ adalah RecommenderNet. Model ini menghitung skor kecocokan antara pengguna dan anime melalui _dot product_, dan menambahkan bias per anime dan per pengguna. Skor kecocokan diskalakan ke interval [0, 1] melalui sigmoid. Selanjutnya dilakukan proses compile pada model dengan binary crossentropy sebagai loss function, adam sebagai optimizer, dan RMSE sebagai metrik dari model. Setelah model berhasil dibuat, saatnya untuk menguji model dalam menentukan rekomendasi anime. Pada proses ini, akan dipilih satu user secara acak lalu model akan memberikan rekomendasi anime yang cocok dengan user tersebut.
+Pada _Collaborative Filtering_ akan dilakukan pendekatan dengan _deep learning_.  Model yang akan dipakai dalam _Collaborative Filtering_ adalah RecommenderNet. Model ini menghitung skor kecocokan antara pengguna dan anime melalui _dot product_, dan menambahkan bias per anime dan per pengguna. Skor kecocokan diskalakan ke interval [0, 1] melalui sigmoid. Selanjutnya dilakukan proses compile pada model dengan binary crossentropy sebagai loss function, adam sebagai optimizer, dan RMSE sebagai metrik dari model. Setelah model berhasil dibuat, saatnya untuk menguji model dalam menentukan rekomendasi anime. Pada proses ini, akan dipilih satu pemgguna secara acak lalu model akan memberikan rekomendasi anime yang cocok dengan pengguna tersebut.
 <br>
+![Screenshot 2024-03-07 234020](https://github.com/Padmanaba231/Anime-Recomender-System/assets/157343566/247fa519-aaf8-4d2c-888e-92cfc6f02027)
+<br>
+Gambar 4 Hasil rekomendasi _Collaborative Filtering_
+<br><br>
+Pada gambar 4 bisa dilihat hasil dari rekomendasi anime berdasarkan pengguna. Bisa dilihat beberapa kemiripan pada genre antara anime yang diberi rating tinggi oleh pengguna dengan anime yang diberikan oleh sistem rekomendasi. Hal ini menunjukan bahwa model sudah dapat bekerja dengan cukup baik dalam merekomendasikan anime kepada pengguna.
+#### Kelebihan
+Dalam sistem rekomendasi, deep learning dapat secara efektif menangkap preferensi pengguna yang kompleks dan nuansa dalam data perilaku mereka, seperti sejarah tontonan atau penilaian. Selain itu pada data yang besar Metode deep learning dapat memberikan tingkat akurasi yang tinggi dalam memprediksi preferensi pengguna.
+#### Kekurangan
+Sumber daya komputasi yang dibutuhkan untuk melatih model deep learning dapat menjadi mahal dan berat, dan hal ini dapat menjadi hambatan terutama untuk organisasi atau individu dengan anggaran terbatas. Karena komputasi yang berat, hal ini mengakibatkan model memerlukan waktu yang lama dalam melatih data.
+
+
+# Evaluation
+### Content Based Filtering
+Pada _Content Based Filtering_ metrik evaluasi yang akan digunakan adalah _Precission_. _Precission_ adalah metrik yang digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio prediksi positif sejati terhadap jumlah total prediksi positif (positif sejati dan positif palsu).
+$$Precision = {TP \over TP + FP}$$
+Keterangan:
+<br>
+<strong>True Positive (TP)</strong>: Jumlah observasi positif yang benar-benar diprediksi sebagai positif oleh model.
+<br>
+<strong>False Positive (FP)</strong>: Model salah memberi label pada data kategori negatif sebagai positif.
+<br>
+<br>
+Berdasarkan hasil ujicoba pada model Content Base Filtering menggunakan Filter Genre, dan Type didapat bahwa 5/5 hasil rekomendasi memiliki jenis Genre, dan Type yang serupa dengan anime yang sebelumnya ditonton oleh pengguna. Anime yang ditonton pengguna yaitu anime Charlotte memiliki genre Drama, School, Super Power dan type TV. Pada hasil prediksi, model berhasil memprediksi anime yang memiliki genre dan type yang serupa dengan anime Charlotte. Dengan demikian Top-5 Reccomender System yang dibangun memiliki presisi sebesar 5/5 = 100%
+
+### Collaborative Filtering
+Pada collaborative filtering, metrik evaluasi yang digunakan adalah RMSE(_root mean square error_). RMSE adalah ukuran yang sering digunakan untuk perbedaan antara nilai (nilai sampel atau populasi) yang diprediksi oleh model atau penduga dan nilai yang diamati. RMSE merupakan metode pengukuran yang mengevaluasi perbedaan antara nilai prediksi dari sebuah model dengan nilai yang diobservasi, dihitung sebagai akar kuadrat dari Mean Square Error. Keakuratan estimasi kesalahan pengukuran dapat dilihat dari nilai RMSE yang rendah.
+<br><br>
+![Screenshot 2024-03-08 000510](https://github.com/Padmanaba231/Anime-Recomender-System/assets/157343566/ddfb19cc-78be-4f87-9780-761b62de9db2)
+<br>
+Gambar 5 Hasil Metrik Evaluasi
+<br><br>
+Bila dilihat pada gambar 5, nilai error yang dimiliki pada model terbilang cukup rendah. Model memperoleh nilai error akhir sekitar 0.1509 pada data latih dan 0.2845 pada data evaluasi. Nilai tersebut cukup bagus untuk sistem rekomendasi. Hal ini dapat dibuktikan pada gambar 4. Pada gambar 4 bisa diperhatikan bahwa model telah berhasil merekomendasikan anime yang serupa dengan anime yang ditonton oleh pengguna. Anime yang direkomendasikan model memiliki genre yang serupa dengan anime yang diberi rating tinggi oleh pengguna. Dari sini dapat disimpulkan bahwa model bekerja dengan baik.
+
