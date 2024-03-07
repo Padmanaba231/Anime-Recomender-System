@@ -180,5 +180,7 @@ Bila dilihat pada gambar 5, nilai error yang dimiliki pada model terbilang cukup
 
 # Referensi 
 [1] Jena, Abhipsa & Jaiswal, Arunima & Lal, Dakshita & Rao, Soumya & Ayubi, Afshan & Sachdeva, Nitin. (2022). Recommendation System For Anime Using Machine Learning Algorithms. 10.2139/ssrn.4121831.
+<br>
 [2] Zhang, Shuai & Yao, Lina & Sun, Aixin & Tay, Yi. (2019). Deep Learning Based Recommender System: A Survey and New Perspectives. 10.1145/3285029
+<br>
 [3] Zhang, Qian & Lu, Jie & Jin, Yaochu. (2021). Artificial intelligence in recommender systems. 10.1007/s40747-020-00212-w
