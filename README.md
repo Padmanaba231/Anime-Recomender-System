@@ -94,4 +94,52 @@ Keterangan:
 + ||A|| mewakili norma Euclidean (magnitudo) dari vektor A.
 + ||B|| mewakili norma Euclidean (magnitudo) dari vektor B.
 
-Setelah membangun model, model perlu diuji terlebih dahulu. Pada proyek ini dibuat model _Content Based Filtering_ menggunakan 2 filter, yaitu genre dan type. 
+Setelah membangun model, model perlu diuji terlebih dahulu. Pada proyek ini dibuat model _Content Based Filtering_ menggunakan 2 filter, yaitu genre dan type. Berikut merupakan hasil rekomendasi top-5 berdasarkan fitur genre dan fitur type:
+<br>
+Melakukan pengujian fitur genre:
+```
+anime_recommendations('Charlotte')
+```
+<br> 
+Hasil: 
+<br><br>
+
+|   | name                                | genre                               |
+|---|-------------------------------------|-------------------------------------|
+| 0 |         Charlotte: Tsuyoi Monotachi |                 School, Super Power |
+| 1 | Baka to Test to Shoukanjuu: Matsuri |         Comedy, School, Super Power |
+| 2 |                Kill la Kill Special | Action, Comedy, School, Super Power |
+| 3 |                        Kill la Kill | Action, Comedy, School, Super Power |
+| 4 |                               X-Men |          Action, Drama, Super Power |
+<br>
+Tabel 1 Hasil rekomendasi berdasarkan genre
+
+<br><br>
+Melakukan pengujian fitur type:
+```
+anime_recommendations2('Charlotte')
+```
+<br> 
+Hasil:
+<br><br>
+
+|   | name                                             | type  |
+|---|--------------------------------------------------|-------|
+| 0 |                    Tantei Kageki Milky Holmes TD |    TV |
+| 1 |                                        Red Baron |    TV |
+| 2 | Sora wo Miageru Shoujo no Hitomi ni Utsuru Sekai |    TV |
+| 3 |                                         Himegoto |    TV |
+| 4 |                           SF Saiyuuki Starzinger |    TV |
+<br> 
+Tabel 2 Hasil rekomendasi berdasarkan type
+
+<br><br>
+Berdasarkan pengujian yang telah dilakukan, bila melihat pada tabel 1 dan tabel 2 ada beberapa hal yang bisa disimpulkan. Sebelumnya, anime yang akan direkomendasikan adalah anime dengan judul Charlotte yang memiliki type TV dan memiliki genre, yaitu Drama, School, Super Power. Pada tabel 1 dan 2 terlihat bahwa model memberikan anime sejenis dengan anime Charlotte berdasarkan fitur genre dan type. Pada tabel 1 bisa dilihat bahwa anime yang direkomendasikan model memiliki kemiripan pada genre. Sedangkan pada tabel 2 bisa dilihat bahwa semua anime yang direkomendasikan memiliki type yang sama terhadap anime Charlotte. Bisa disimpulkan bahwa model telah berhasil memberikan rekomendasi anime yang serupa dengan anime input.
+#### Kelebihan
+Kelebihan dari model Cosine Similarity adalah modelnya yang terbilang sederhana sehingga tidak memerlukan kompusitas yang tinggi dan waktu yang lama saat melatih model tersebut
+#### Kekurangan
+Karena hanya menggunakan arah vektor dan tidak menghitung besaran vektornya. Hal ini mungkin dapa mengakibatkan jika dua vektor memiliki panjang yang sangat berbeda, meskipun arahnya sama, nilai cosine similarity dapat menjadi tidak representatif. Hal ini dapat menyebabkan ketidakakuratan dalam perbandingan dan peringkat item.
+<br><br>
+
+
+## Collaborative Filtering
