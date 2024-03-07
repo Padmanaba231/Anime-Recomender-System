@@ -178,3 +178,7 @@ Gambar 5 Hasil Metrik Evaluasi
 <br><br>
 Bila dilihat pada gambar 5, nilai error yang dimiliki pada model terbilang cukup rendah. Model memperoleh nilai error akhir sekitar 0.1509 pada data latih dan 0.2845 pada data evaluasi. Nilai tersebut cukup bagus untuk sistem rekomendasi. Hal ini dapat dibuktikan pada gambar 4. Pada gambar 4 bisa diperhatikan bahwa model telah berhasil merekomendasikan anime yang serupa dengan anime yang ditonton oleh pengguna. Anime yang direkomendasikan model memiliki genre yang serupa dengan anime yang diberi rating tinggi oleh pengguna. Dari sini dapat disimpulkan bahwa model bekerja dengan baik.
 
+# Referensi 
+[1] Jena, Abhipsa & Jaiswal, Arunima & Lal, Dakshita & Rao, Soumya & Ayubi, Afshan & Sachdeva, Nitin. (2022). Recommendation System For Anime Using Machine Learning Algorithms. 10.2139/ssrn.4121831.
+[2] Zhang, Shuai & Yao, Lina & Sun, Aixin & Tay, Yi. (2019). Deep Learning Based Recommender System: A Survey and New Perspectives. 10.1145/3285029
+[3] Zhang, Qian & Lu, Jie & Jin, Yaochu. (2021). Artificial intelligence in recommender systems. 10.1007/s40747-020-00212-w
