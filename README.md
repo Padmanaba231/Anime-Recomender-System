@@ -143,3 +143,5 @@ Karena hanya menggunakan arah vektor dan tidak menghitung besaran vektornya. Hal
 
 
 ## Collaborative Filtering
+Pada _Collaborative Filtering_ akan dilakukan pendekatan dengan _deep learning_.  Model yang akan dipakai dalam _Collaborative Filtering_ adalah RecommenderNet. Model ini menghitung skor kecocokan antara pengguna dan anime melalui _dot product_, dan menambahkan bias per anime dan per pengguna. Skor kecocokan diskalakan ke interval [0, 1] melalui sigmoid. Selanjutnya dilakukan proses compile pada model dengan binary crossentropy sebagai loss function, adam sebagai optimizer, dan RMSE sebagai metrik dari model. Setelah model berhasil dibuat, saatnya untuk menguji model dalam menentukan rekomendasi anime. Pada proses ini, akan dipilih satu user secara acak lalu model akan memberikan rekomendasi anime yang cocok dengan user tersebut.
+<br>
